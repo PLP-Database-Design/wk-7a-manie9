@@ -1,11 +1,10 @@
-Week 7 Assignment Guide
-
- --  Question 1
+--  Question 1
 CREATE TABLE ProductDetail (
-    OrderID INT,
-    CustomerName VARCHAR(100),
-    Products VARCHAR(100)
+OrderID INT,
+CustomerName VARCHAR(100),
+Products VARCHAR(100)
 );
+
 INSERT INTO ProductDetail(OrderID, CustomerName, Products)
 VALUES
 (101, 'John Doe', 'Laptop'),
@@ -16,25 +15,26 @@ VALUES
 (103, 'Emily Clark', 'Phone');
 
 
--- Question 2
+   -- Question 2
 CREATE TABLE Orders (
-    OrderID INT PRIMARY KEY,
-    CustomerName VARCHAR(100)
+    OrderID INT PRIMARY KEY,
+    CustomerName VARCHAR(100)
 );
+
 INSERT INTO Orders (OrderID, CustomerName)
 VALUES
-(101, 'John Doe'),
-(102, 'Jane Smith'),
-(103, 'Emily Clark');
-
+    (101, 'John Doe'),
+    (102, 'Jane Smith'),
+    (103, 'Emily Clark');
 
 CREATE TABLE Product (
-    OrderID INT,
-    Product VARCHAR(100),
-    Quantity INT,
-    PRIMARY KEY (OrderID, Product),
-    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
+ OrderID INT,
+ Product VARCHAR(100),
+ Quantity INT,
+ PRIMARY KEY (OrderID, Product),
+ FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
 );
+
 
 INSERT INTO Product (OrderID, Product, Quantity)
 VALUES
